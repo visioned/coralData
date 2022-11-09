@@ -12,9 +12,8 @@ async function handler(req, res) {
 
     const coralsCollection = db.collection("corals");
 
-    const result = await coralsCollection.insertOne(data);
+    await coralsCollection.insertOne(data);
 
-    console.log(result);
     client.close();
 
     res.status(201).json({ message: "coral inserted" });

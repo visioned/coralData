@@ -1,4 +1,3 @@
-// our-domain.com/new-coral
 import { useRouter } from "next/router";
 import { Fragment } from "react";
 import Head from "next/head";
@@ -9,16 +8,13 @@ function NewCoralPage() {
   const router = useRouter();
 
   async function addCoralHandler(enteredCoralData) {
-    const response = await fetch("/api/new-coral", {
+    await fetch("/api/new-coral", {
       method: "POST",
       body: JSON.stringify(enteredCoralData),
       headers: {
         "Content-Type": "application/json",
       },
     });
-    const data = await response.json();
-
-    console.log(data);
 
     router.push("/");
   }
