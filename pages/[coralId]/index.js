@@ -44,7 +44,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   //fetch data for single coral
 
-  const coralId = context.params.id;
+  const coralId = context.params.coralId;
 
   const client = await MongoClient.connect(
     "mongodb+srv://drajreact:KNToqWEHvpsjG18a@cluster0.rfxjl3d.mongodb.net/corals?retryWrites=true&w=majority"
