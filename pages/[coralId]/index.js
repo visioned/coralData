@@ -34,7 +34,7 @@ export async function getStaticPaths() {
   client.close();
 
   return {
-    fallback: true,
+    fallback: blocking,
     paths: corals.map((coral) => ({
       params: { coralId: coral._id.toString() },
     })),
