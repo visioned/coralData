@@ -21,7 +21,7 @@ function CoralItem(props) {
           <highlight>{props.highlight}</highlight>
         </div>
         <div className={classes.actions}>
-          <button onClick={showDetailsHandler}>check the carfax</button>
+          <button onClick={showDetailsHandler}>check the coralfax</button>
         </div>
       </Card>
     </li>

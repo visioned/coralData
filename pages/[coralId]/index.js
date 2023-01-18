@@ -23,7 +23,7 @@ function CoralDetails(props) {
 
 export async function getStaticPaths() {
   const client = await MongoClient.connect(
-    "mongodb+srv://drajreact:KNToqWEHvpsjG18a@cluster0.rfxjl3d.mongodb.net/corals?retryWrites=true&w=majority"
+    `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@cluster0.rfxjl3d.mongodb.net/?retryWrites=true&w=majority`
   );
   const db = client.db();
 
@@ -34,7 +34,7 @@ export async function getStaticPaths() {
   client.close();
 
   return {
-    fallback: "blocking",
+    fallback: true,
     paths: corals.map((coral) => ({
       params: { coralId: coral._id.toString() },
     })),
@@ -44,10 +44,10 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   //fetch data for single coral
 
-  const coralId = context.params?.coralId;
+  const coralId = context.params.id;
 
   const client = await MongoClient.connect(
-    "mongodb+srv://drajreact:KNToqWEHvpsjG18a@cluster0.rfxjl3d.mongodb.net/corals?retryWrites=true&w=majority"
+    `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@cluster0.rfxjl3d.mongodb.net/?retryWrites=true&w=majority`
   );
   const db = client.db();
 

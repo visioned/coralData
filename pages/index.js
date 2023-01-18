@@ -1,15 +1,15 @@
-import { Fragment } from "react";
-import Head from "next/head";
-import { MongoClient } from "mongodb";
+import { Fragment } from 'react';
+import Head from 'next/head';
+import { MongoClient } from 'mongodb';
 
-import CoralList from "../components/corals/CoralList";
+import CoralList from '../components/corals/CoralList';
 
 function HomePage(props) {
   return (
     <Fragment>
       <Head>
         <title>coral Data</title>
-        <meta name="description" content="browse a huge list of rare corals" />
+        <meta name='description' content='browse a huge list of rare corals' />
       </Head>
       <CoralList corals={props.corals} />
     </Fragment>
@@ -33,11 +33,11 @@ export async function getStaticProps() {
   // fetch data from an api
 
   const client = await MongoClient.connect(
-    "mongodb+srv://drajreact:KNToqWEHvpsjG18a@cluster0.rfxjl3d.mongodb.net/corals?retryWrites=true&w=majority"
+    `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@cluster0.rfxjl3d.mongodb.net/?retryWrites=true&w=majority`
   );
   const db = client.db();
 
-  const coralsCollection = db.collection("corals");
+  const coralsCollection = db.collection('corals');
 
   const corals = await coralsCollection.find().toArray();
 
@@ -51,8 +51,7 @@ export async function getStaticProps() {
         image: coral.image,
         highlight: coral.highlight,
       })),
-    },
-    revalidate: 1,
+    }
   };
 }
 

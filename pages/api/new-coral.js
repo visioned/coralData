@@ -1,22 +1,23 @@
-import { MongoClient } from "mongodb";
+import { MongoClient } from 'mongodb';
 
 async function handler(req, res) {
   // POST /api/new-coral
-  if (req.method === "POST") {
+  if (req.method === 'POST') {
     const data = req.body;
 
     const client = await MongoClient.connect(
-      "mongodb+srv://drajreact:KNToqWEHvpsjG18a@cluster0.rfxjl3d.mongodb.net/corals?retryWrites=true&w=majority"
+      `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@cluster0.rfxjl3d.mongodb.net/?retryWrites=true&w=majority`
     );
     const db = client.db();
 
-    const coralsCollection = db.collection("corals");
+    const coralsCollection = db.collection('corals');
 
-    await coralsCollection.insertOne(data);
+    const result = await coralsCollection.insertOne(data);
 
+    console.log(result);
     client.close();
 
-    res.status(201).json({ message: "coral inserted" });
+    res.status(201).json({ message: 'coral inserted' });
   }
 }
 
