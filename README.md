@@ -3,6 +3,7 @@
 <br />
 <div align="center">
     <img src="images/coralsplash.jpg" alt="Splash" width="800" height="800">
+</div>
 <div align="center">
 <h3 align="center">modernBank spa</h3>
   <p align="center">
