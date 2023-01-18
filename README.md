@@ -5,9 +5,9 @@
     <img src="images/coralsplash.jpg" alt="Splash" width="400" height="400">
 </div>
 <div align="center">
-<h3 align="center">modernBank spa</h3>
+<h3 align="center">Coral Data</h3>
   <p align="center">
-    an spa created from a figma design
+    An application using React, MongoDB, and Next.js
     <br />
   </p>
 </div>
@@ -24,9 +24,6 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#contact">Contact</a>
-    </li>
   </ol>
 </details>
 
@@ -42,4 +39,6 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ### Built With
 
-* React.js
+* React
+* MongoDB
+* Next.js
