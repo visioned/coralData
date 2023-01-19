@@ -32,7 +32,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-Exploring MongoDB as a backend. Using POST methods to write to mongo and map updates to the front page.
+Exploring MongoDB as a backend.
 
 ### Built With
 
