@@ -2,7 +2,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <img src="images/coralsplash.jpg" alt="Splash" width="400" height="400">
+    <img src="images/coralsplash.jpg" alt="Splash" width="200" height="300">
+    <img src="images/coralsplash2.jpg" alt="Splash" width="200" height="300">
 </div>
 <div align="center">
 <h3 align="center">Coral Data</h3>
