@@ -7,7 +7,7 @@
 <div align="center">
 <h3 align="center">Coral Data</h3>
   <p align="center">
-    Data with SSR.
+    Data visualization with MongoDB
     <br />
   </p>
 </div>
